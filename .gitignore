@@ -37,4 +37,4 @@ next-env.d.ts
 
 node_modules
 
-
+src/app/config/firebaseConfig.ts
