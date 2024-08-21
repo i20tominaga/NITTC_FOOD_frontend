@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const OrderPage: React.FC = () => {
+export function orderPage() {
     return (
         <div className="p-4">
             <h3 className="text-lg font-bold">注文</h3>

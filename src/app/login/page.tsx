@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const loginPage: React.FC = () => {
+export function loginPage() {
     return (
         <div className="p-4">
             <h3 className="text-lg font-bold">ログイン</h3>
