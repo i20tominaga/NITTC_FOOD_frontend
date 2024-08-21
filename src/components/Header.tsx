@@ -11,12 +11,14 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
+import { useRouter } from 'next/navigation';
 import { AlignLeft } from 'lucide-react';
 
-
 export function Header() {
+    const router = useRouter();
+
     return (
-        <header className="p-4 flex items-center justify-between">
+        <header className="p-4 flex items-center justify-between border-b border-gray-300">
             {/* シートをトリガーするボタン */}
             <Sheet>
                 <SheetTrigger asChild>
@@ -26,40 +28,42 @@ export function Header() {
                 </SheetTrigger>
                 <SheetContent>
                     <SheetHeader>
-                        <SheetTitle>Edit profile</SheetTitle>
+                        <SheetTitle>Dashboard</SheetTitle>
                         <SheetDescription>
-                            Make changes to your profile here. Click save when you are done.
+                            Access various sections of the application.
                         </SheetDescription>
                     </SheetHeader>
                     <div className="grid gap-4 py-4">
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="name" className="text-right">
-                                Name
-                            </Label>
-                            <Input id="name" value="Pedro Duarte" className="col-span-3" />
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="username" className="text-right">
-                                Username
-                            </Label>å
-                            <Input id="username" value="@peduarte" className="col-span-3" />
-                        </div>
+                        <Button onClick={() => router.push('/ticket')}>
+                            整理券予約
+                        </Button>
+                        <Button onClick={() => router.push('/order')}>
+                            注文
+                        </Button>
+                        <Button onClick={() => router.push('/login')}>
+                            ログイン
+                        </Button>
+                        {/*}
+                        <Button onClick={() => router.push('/logout')}>
+                            ログアウト
+                        </Button>
+                        */}
                     </div>
                     <SheetFooter>
                         <SheetClose asChild>
-                            <Button type="submit">Save changes</Button>
+                            <Button type="submit">Close</Button>
                         </SheetClose>
                     </SheetFooter>
                 </SheetContent>
             </Sheet>
 
-            <div className="text-center">
-                <h1 className="text-center flex-grow">NITTC-FOOD</h1>
+            <div className="text-center flex-grow">
+                <h1 className="text-center">NITTC-FOOD</h1>
             </div>
-            <div className="flex items-center space-x-4">
 
+            <div className="flex items-center space-x-4">
                 <Button>Click me</Button>
             </div>
         </header>
-    )
+    );
 }
