@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const TicketPage: React.FC = () => {
     return (
         <div className="p-4">
