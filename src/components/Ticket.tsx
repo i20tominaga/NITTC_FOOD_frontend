@@ -1,4 +1,4 @@
-import { Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
 
 export const TicketSection: React.FC = () => {
@@ -7,9 +7,10 @@ export const TicketSection: React.FC = () => {
         router.push('/ticket');
     }
     return (
-        <div className="p-4">
-            <h3 className="text-lg font-bold">整理券予約</h3>
-            <Button onClick = {handleTicket}>整理券を予約する</Button>
+        <div className="bg-card p-6 rounded-lg shadow">
+            <h2 className="text-2xl font-bold mb-4">整理券予約</h2>
+            <p className="mb-6">次の利用可能な整理券を確認して、ここから直接予約します。</p>
+            <Button size="lg" className="w-full" onClick={handleTicket}>整理券を予約する</Button>
         </div>
     );
 }
