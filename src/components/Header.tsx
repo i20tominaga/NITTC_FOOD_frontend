@@ -35,9 +35,6 @@ export function Header() {
                             </SheetDescription>
                         </SheetHeader>
                         <div className="grid gap-4 py-4">
-                            <Button onClick={() => router.push('/ticket')}>
-                                整理券予約
-                            </Button>
                             <Button onClick={() => router.push('/order')}>
                                 注文
                             </Button>
